@@ -1,5 +1,5 @@
 body {
-  font-family: Helvetica;
+  font-family: "Helvetica", "Arial", sans-serif;
 }
 
 .chord:not(:last-child) {
@@ -29,7 +29,7 @@ body {
 }
 .song h1 {
   column-span: all;
-  font-family: Futura;
+  font-family: "Futura", sans-serif;
 }
 .chord-sheet {
   display: flex;
