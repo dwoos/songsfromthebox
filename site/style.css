@@ -36,7 +36,7 @@ body {
   flex-direction: column;
   flex-wrap: wrap;
   column-gap: 10px;
-  height: 85vh;
+  height: 75vh;
   margin-left: 30px;
 }
 .chord-sheet .paragraph {
@@ -90,4 +90,17 @@ body {
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
   color: #f1f1f1;
+}
+
+/* footer */
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.footer div {
+  display: inline;
 }

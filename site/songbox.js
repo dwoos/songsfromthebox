@@ -18,6 +18,24 @@ const displaySong = (song) => {
     const disp = formatter.format(song);
     $("#song").html(disp);
     displayedSong = song;
+    // get chords
+    const chords = new Set();
+    displayedSong.lines.forEach((line) => {
+        line.items.forEach((item) => {
+            if (
+                item instanceof ChordSheetJS.ChordLyricsPair &&
+                item.chords != ""
+            ) {
+                chords.add(item.chords);
+            }
+        });
+    });
+    $(".footer").html("");
+    chords.forEach((chord) => {
+        const el = $("<div/>");
+        $(".footer").append(el);
+        jtab.render(el, chord);
+    });
 };
 
 parsedSongs.forEach((song) => {

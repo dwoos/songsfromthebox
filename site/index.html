@@ -10,10 +10,21 @@
       <div class="sidenav-contents"></div>
     </div>
     <div id="song" class="song"></div>
+    <div class="footer"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"
+      integrity="sha512-tBzZQxySO5q5lqwLWfu8Q+o4VkTcRGOeQGVQ0ueJga4A1RKuzmAu5HXDOXLEjpbKyV7ow9ympVoa6wZLEzRzDg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="songs.js"></script>
-    <script src="chordpro/bundle.js"></script>
+    <script src="deps/chordpro.js"></script>
+    <script src="deps/jtab.js"></script>
     <link rel="stylesheet" href="style.css" />
     <script src="songbox.js"></script>
+    <script type="text/javascript">
+      jtab.renderimplicit();
+    </script>
   </body>
 </html>
