@@ -10,15 +10,13 @@ const toggleMenu = () => {
     }
 };
 const button = $(".sidenav-button a");
-button.click(toggleMenu);
+button.on("click", (evt) => {
+    toggleMenu();
+    evt.preventDefault();
+});
 
 $(() => {
     $(".sidenav-contents").hide();
-});
-
-const parser = new ChordSheetJS.ChordProParser();
-const parsedSongs = songs.map((song) => {
-    return { slug: song.slug, song: parser.parse(song.song) };
 });
 
 var displayedSong;
@@ -50,18 +48,42 @@ const displaySong = (song) => {
     });
 };
 
-parsedSongs.forEach((song) => {
-    const item = $(`<a href="#${song.slug}">${song.song.title}</a>`);
-    item.on("click", () => {
-        console.log("hello");
-        displaySong(song.song);
-        toggleMenu();
+$(() => {
+    const parser = new ChordSheetJS.ChordProParser();
+    const parsedSongs = songs.map((song) => {
+        return { slug: song.slug, song: parser.parse(song.song) };
     });
-    $(".sidenav-songs").append(item);
+
+    parsedSongs.sort((song1, song2) => {
+        if (song1.song.title < song2.song.title) {
+            return -1;
+        } else {
+            return 1;
+        }
+    });
+
+    parsedSongs.forEach((song) => {
+        const item = $(`<a href="#${song.slug}">${song.song.title}</a>`);
+        item.on("click", () => {
+            console.log("hello");
+            displaySong(song.song);
+            toggleMenu();
+        });
+        $(".sidenav-songs").append(item);
+    });
+    console.log("hello");
+    displaySong(parsedSongs[0].song);
+    console.log(window.location.hash);
+    if (window.location.hash) {
+        const slug = window.location.hash.substring(1);
+        console.log(slug);
+        parsedSongs.forEach((song) => {
+            if (song.slug === slug) {
+                displaySong(song.song);
+            }
+        });
+    }
 });
-
-displaySong(parsedSongs[0].song);
-
 const transposeUp = () => {
     const song = displayedSong.transposeUp(1);
     displaySong(song);
