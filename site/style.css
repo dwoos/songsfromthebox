@@ -66,6 +66,26 @@ body {
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 20px;
 }
+
+.sidenav-contents {
+  background-color: white;
+  color: #818181;
+  font-size: 25px;
+}
+
+.song-search {
+  padding: 6px 8px 6px 16px;
+  margin: 6px 8px 6px 16px;
+  caret-color: transparent;
+}
+
+.sidenav-controls a {
+  padding: 9px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+}
+
 .sidenav-button a {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
@@ -74,22 +94,14 @@ body {
   display: block;
 }
 
-.sidenav-contents {
-  visibility: visible;
-}
 /* The navigation menu links */
-.sidenav-contents a {
+.sidenav-songs a {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
   display: block;
-  background-color: white;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-  color: #f1f1f1;
+  color: #818181;
+  font-size: 25px;
 }
 
 /* footer */
