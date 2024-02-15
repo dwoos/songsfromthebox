@@ -119,6 +119,13 @@ $(".song-search").on("input", () => {
     });
 });
 
+$(".sidenav-controls .shuffle").on("click", (evt) => {
+    evt.preventDefault();
+    const songs = $(".sidenav-songs a");
+    const i = Math.floor(Math.random() * songs.length);
+    $(songs[i]).trigger("click");
+});
+
 /*$(".song-search").on("keypress", (evt) => {
     if (evt.keyCode === 13) {
         $(".sidenav-songs a:visible").first().trigger("click");
