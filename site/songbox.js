@@ -1,16 +1,24 @@
+const hideMenu = () => {
+    $(".sidenav-contents").hide();
+};
+
+const showMenu = () => {
+    $(".sidenav-contents").show();
+    $(".song-search").val("");
+    $(".song-search").trigger("focus");
+    $(".song-search").triggerHandler("input");
+};
+
 const toggleMenu = () => {
-    const menuContents = $(".sidenav-contents");
-    if (menuContents.is(":visible")) {
-        menuContents.hide();
+    if ($(".sidenav-contents").is(":visible")) {
+        hideMenu();
     } else {
-        menuContents.show();
-        $(".song-search").val("");
-        $(".song-search").trigger("focus");
-        $(".song-search").triggerHandler("input");
+        showMenu();
     }
 };
 const button = $(".sidenav-button a");
 button.on("click", (evt) => {
+    console.log("button clicked");
     toggleMenu();
     evt.preventDefault();
 });
@@ -67,14 +75,12 @@ $(() => {
         item.on("click", () => {
             console.log("hello");
             displaySong(song.song);
-            toggleMenu();
+            hideMenu();
         });
         $(".sidenav-songs").append(item);
     });
-    console.log("hello");
-    displaySong(parsedSongs[0].song);
-    console.log(window.location.hash);
-    if (window.location.hash) {
+    $(".sidenav-contents").hide();
+    if (window.location.hash && window.location.hash !== "#") {
         const slug = window.location.hash.substring(1);
         console.log(slug);
         parsedSongs.forEach((song) => {
@@ -82,6 +88,8 @@ $(() => {
                 displaySong(song.song);
             }
         });
+    } else {
+        $(() => $(".sidenav-controls .shuffle").trigger("click"));
     }
 });
 const transposeUp = () => {
