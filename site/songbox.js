@@ -36,7 +36,7 @@ const displaySong = (song) => {
                 item instanceof ChordSheetJS.ChordLyricsPair &&
                 item.chords != ""
             ) {
-                chords.add(item.chords);
+                chords.add(ChordSheetJS.Chord.parse(item.chords).toString());
             }
         });
     });
