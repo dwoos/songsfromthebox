@@ -23,14 +23,18 @@ body {
   content: "\200b";
 }
 
+#title {
+  margin: 30px;
+}
+
 .song {
-  margin-left: 60px;
+  margin-left: 30px;
   margin-top: 10px;
 }
 
+/* hide the auto-generated song title */
 .song h1 {
-  column-span: all;
-  font-family: "Futura", sans-serif;
+  display: none;
 }
 
 .chord-sheet {
@@ -39,7 +43,7 @@ body {
   flex-wrap: wrap;
   column-gap: 10px;
   height: 75vh;
-  margin-left: 30px;
+  /* margin-left: 30px; */
 }
 
 .chord-sheet .paragraph {
@@ -60,70 +64,6 @@ body {
   border: 3px dotted blue;
   padding: 3px;
   font-weight: bold;
-}
-
-/* The sidebar menu */
-.sidenav {
-  height: 100%;
-  /* Full-height: remove this if you want "auto" height */
-  position: fixed;
-  /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1;
-  /* Stay on top */
-  top: 0;
-  /* Stay at the top */
-  left: 0;
-  background-color: transparent;
-  overflow-x: hidden;
-  /* Disable horizontal scroll */
-  padding-top: 20px;
-}
-
-.sidenav-contents {
-  background-color: white;
-  color: #818181;
-  font-size: 25px;
-  border: 2px solid #818181;
-}
-
-.song-search {
-  padding: 6px 8px 6px 16px;
-  margin: 6px 8px 6px 16px;
-  caret-color: transparent;
-}
-
-.sidenav-controls a {
-  padding: 9px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 20px;
-  color: black;
-}
-
-.sidenav-button a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-}
-
-.sidenav-songs {
-  height: 80%;
-  overflow-y: scroll;
-}
-
-.sidenav-songs a:hover {
-  background-color: #eee;
-}
-
-/* The navigation menu links */
-.sidenav-songs a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 25px;
-  display: block;
-  color: #818181;
-  font-size: 25px;
 }
 
 /* footer */

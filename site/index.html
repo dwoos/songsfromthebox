@@ -1,41 +1,27 @@
 <html>
-  <head>
-    <title>Songbox</title>
-  </head>
-  <body>
-    <div class="sidenav">
-      <div class="sidenav-button">
-        <a href="#">☰</a>
-      </div>
-      <div class="sidenav-contents">
-        <div class="sidenav-controls">
-          <input type="text" class="song-search" placeholder="Search" />
-          <a
-            href="https://github.com/dwoos/songsfromthebox/new/main/songs"
-            target="_blank"
-            >Add song</a
-          >
-          <a href="#" class="shuffle">Shuffle</a>
-        </div>
-        <div class="sidenav-songs"></div>
-      </div>
-    </div>
-    <div id="song" class="song"></div>
-    <div class="footer"></div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"
-      integrity="sha512-tBzZQxySO5q5lqwLWfu8Q+o4VkTcRGOeQGVQ0ueJga4A1RKuzmAu5HXDOXLEjpbKyV7ow9ympVoa6wZLEzRzDg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="songs.js"></script>
-    <script src="deps/chordpro.js"></script>
-    <script src="deps/jtab.js"></script>
-    <link rel="stylesheet" href="style.css" />
-    <script src="songbox.js"></script>
-    <script type="text/javascript">
-      jtab.renderimplicit();
-    </script>
-  </body>
+
+<head>
+  <title>Songbox</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="//code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+  <script src="songs.js"></script>
+  <script src="deps/chordpro.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"
+    integrity="sha512-tBzZQxySO5q5lqwLWfu8Q+o4VkTcRGOeQGVQ0ueJga4A1RKuzmAu5HXDOXLEjpbKyV7ow9ympVoa6wZLEzRzDg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="deps/jtab.js"></script>
+  <script src="songbox.js"></script>
+</head>
+
+<body>
+  <h1 contenteditable="" id="title">🔍 Click me or hit "/"</h1>
+  <div id="song" class="song"></div>
+  <div class="footer"></div>
+  <script type="text/javascript">
+    jtab.renderimplicit();
+  </script>
+</body>
+
 </html>
