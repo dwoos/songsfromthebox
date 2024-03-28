@@ -27,10 +27,12 @@ body {
   margin-left: 60px;
   margin-top: 10px;
 }
+
 .song h1 {
   column-span: all;
   font-family: "Futura", sans-serif;
 }
+
 .chord-sheet {
   display: flex;
   flex-direction: column;
@@ -39,31 +41,41 @@ body {
   height: 75vh;
   margin-left: 30px;
 }
+
 .chord-sheet .paragraph {
   margin-top: 20px;
   flex: 1;
 }
+
 .chord {
   font-weight: bold;
 }
+
 .chorus {
   border-left: 3px dotted blue;
   padding-left: 6px;
 }
+
 .comment {
   border: 3px dotted blue;
   padding: 3px;
   font-weight: bold;
 }
+
 /* The sidebar menu */
 .sidenav {
-  height: 100%; /* Full-height: remove this if you want "auto" height */
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
+  height: 100%;
+  /* Full-height: remove this if you want "auto" height */
+  position: fixed;
+  /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1;
+  /* Stay on top */
+  top: 0;
+  /* Stay at the top */
   left: 0;
   background-color: transparent;
-  overflow-x: hidden; /* Disable horizontal scroll */
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
   padding-top: 20px;
 }
 
@@ -93,6 +105,15 @@ body {
   font-size: 25px;
   color: #818181;
   display: block;
+}
+
+.sidenav-songs {
+  height: 80%;
+  overflow-y: scroll;
+}
+
+.sidenav-songs a:hover {
+  background-color: #eee;
 }
 
 /* The navigation menu links */
