@@ -21,6 +21,7 @@ function displaySong(song) {
         });
     });
     $("#title").text(song.title);
+    // $("#artist").text(song.artist);
     document.title = `Songbox: ${song.title}`;
     $(".footer").html("");
     chords.forEach((chord) => {
@@ -99,7 +100,9 @@ $(() => {
                 }
             ].concat(
                 parsedSongs.map(song => ({
-                    label: `Song: ${song.title}`,
+                    label: song.artist ?
+                        `Song: ${song.title} (${song.artist})` :
+                        `Song: ${song.title}`,
                     value: song.title,
                     action: function () {
                         displaySong(song);

@@ -11,8 +11,11 @@ body {
 }
 
 .row {
-  display: flex;
   margin-top: 5px;
+}
+
+.row .column {
+  display: inline-block;
 }
 
 .chord:after {
@@ -42,7 +45,6 @@ body {
   flex-direction: column;
   flex-wrap: wrap;
   column-gap: 10px;
-  height: 75vh;
   /* margin-left: 30px; */
 }
 
@@ -61,6 +63,7 @@ body {
 }
 
 .comment {
+  display: inline-block;
   border: 3px dotted blue;
   padding: 3px;
   font-weight: bold;
@@ -68,13 +71,22 @@ body {
 
 /* footer */
 .footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
   width: 100%;
   text-align: center;
 }
 
 .footer div {
   display: inline;
+}
+
+@media screen and (min-width: 1000px) {
+  .chord-sheet {
+    height: 75vh;
+  }
+
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+  }
 }
